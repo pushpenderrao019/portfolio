@@ -1,7 +1,7 @@
 # Pushpender Rao | Portfolio 🌐
 
 Welcome to my personal portfolio website!  
-This project is built using HTML, CSS, and vanilla JavaScript to showcase who I am — a Computer Science undergraduate passionate about software engineering, design, and storytelling.
+This project is built using HTML, CSS, and JavaScript to showcase who I am — a Computer Science undergraduate passionate about software engineering, design, and storytelling.
 
 ## 🔍 Features
 - Responsive design for all screen sizes
