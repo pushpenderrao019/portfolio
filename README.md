@@ -2,7 +2,7 @@
 
 I'm excited to officially launch my personal portfolio website, a digital space crafted to reflect who I am — a Computer Science undergraduate passionate about software engineering, creative design, and cinematic storytelling. This website is both a technical showcase and a personal introduction.
 
-🔗 **Live Demo:** [pushpender019.github.io/portfolio](https://pushpender019.github.io/portfolio)
+🔗 **Live Demo:** [pushpenderrao019.github.io/portfolio](https://pushpenderrao019.github.io/portfolio)
 
 ---
 
