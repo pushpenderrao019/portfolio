@@ -33,6 +33,7 @@ function toggleDarkMode() {
     }
 }
 
+//AOS init
 AOS.init();
 
 window.addEventListener("load", () => {
@@ -54,22 +55,60 @@ window.addEventListener("load", () => {
   }, 2500); // Preloader visible for at least 2.5 seconds
 });
 
-fetch('https://your-backend.onrender.com/send', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    name: nameValue,
-    email: emailValue,
-    subject: subjectValue,
-    message: messageValue
-  })
-})
-.then(res => res.json())
-.then(data => {
-  alert(data.message);
-})
-.catch(error => {
-  alert('Error sending message.');
+// Contact form submission (Prevent redirect)
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch('https://portfolio-backend-6lrf.onrender.com/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          showPopup("✅ Message sent successfully!");
+          form.reset();
+        } else {
+          showPopup("❌ Something went wrong. Please try again.");
+        }
+      } catch (error) {
+        console.error(error);
+        showPopup("❌ Server error. Please try again later.");
+      }
+    });
+  }
 });
+
+// Custom popup (non-alert)
+function showPopup(message) {
+  const popup = document.createElement("div");
+  popup.textContent = message;
+  popup.style.position = "fixed";
+  popup.style.bottom = "20px";
+  popup.style.right = "20px";
+  popup.style.backgroundColor = "#222";
+  popup.style.color = "#fff";
+  popup.style.padding = "12px 20px";
+  popup.style.borderRadius = "8px";
+  popup.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+  popup.style.zIndex = "9999";
+  popup.style.fontFamily = "Poppins, sans-serif";
+  popup.style.transition = "opacity 0.3s ease";
+
+  document.body.appendChild(popup);
+
+  setTimeout(() => {
+    popup.style.opacity = "0";
+    setTimeout(() => popup.remove(), 300);
+  }, 4000);
+}
