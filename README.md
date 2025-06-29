@@ -64,19 +64,9 @@ I'm excited to officially launch my personal portfolio website, a digital space 
 │   └── scripts/
 │       └── script.js
 
-
 ---
 
-## How to Run Locally
-git clone https://github.com/yourusername/portfolio.git
-cd portfolio
-npm install
-node server.js
-Visit: http://localhost:3000 to test it.
-
----
-
-##❤️ Final Thoughts
+## ❤️ Final Thoughts
 
 This website is a reflection of my growth as a developer, designer, and creator. It's not just a resume — it's a live canvas of my passion for building, exploring, and storytelling. I’ll continue to evolve it as I learn and grow.
 
