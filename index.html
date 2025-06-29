@@ -21,21 +21,49 @@
   <link rel="stylesheet" href="stylesheets/style.css">
   <link rel="stylesheet" href="stylesheets/darkmode.css">
   <script src="scripts/script.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
   <button class="toggle-mode" onclick="toggleDarkMode()">
     <img id="mode-icon" src="https://img.icons8.com/ios-glyphs/30/moon-symbol.png" alt="Toggle Mode">
   </button>
-  <header>
-    <h1>Pushpender Rao</h1>
-    <p>“Aspiring Software Engineer | Tech Enthusiast | Creative Designer”</p>
-    <div class="header-content">
+<header>
+  <div id="preloader">
+    <div class="text-loader">
+      <span class="letter">P</span>
+      <span class="letter">U</span>
+      <span class="letter">S</span>
+      <span class="letter">H</span>
+      <span class="letter">P</span>
+      <span class="letter">E</span>
+      <span class="letter">N</span>
+      <span class="letter">D</span>
+      <span class="letter">E</span>
+      <span class="letter">R</span>
+      <span class="letter">_</span>
+      <span class="letter">R</span>
+      <span class="letter">A</span>
+      <span class="letter">O</span>
+    </div>
+  </div>
+
+  <div class="header-left">
+    <a href="index.html">
+      <img src="assets/images/PushpenderRao.jpg" alt="Pushpender Rao">
+    </a>
+    <div class="title-text">
+      <h1>Pushpender Rao</h1>
+      <p>“Aspiring Software Engineer”</p>
+    </div>
+  </div>
+  <div class="header-content">
     <a href="index.html">Home</a>
     <a href="contact.html">Contact</a>
-    </div>
-  </header>
+  </div>
+</header>
 
-  <section class="hero">
+  <section class="hero" data-aos="fade-up" data-aos-duration="1000">
     <p>I'm a Computer Science undergraduate passionate about technology, design, and collaborative leadership. Let's connect!</p>
     <div class="contact-btns">
       <a href="mailto:pushpenderrao019@gmail.com">Email</a>
@@ -43,14 +71,14 @@
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up" data-aos-duration="1000">
     <h2>About Me</h2>
     <div class="card">
-    <p>Motivated CSE student passionate about tech, design, and student leadership. Known for teamwork, time management, and creative problem-solving. I enjoy contributing to team initiatives such as organizing events, managing data, and designing visuals.</p>
+    <p>Aspiring frontend web developer with hands-on experience in building responsive websites using React.js, Tailwind CSS, and TypeScript. Strong foundation in computer science fundamentals and a passion for creating clean, user-friendly interfaces. Actively seeking internship opportunities to contribute to real-world projects and grow as a developer.</p>
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up" data-aos-duration="1000">
     <h2>Education</h2>
     <div class="card">
     <p><strong>Guru Jambheshwar University of Science & Technology, Hisar</strong><br/>B.Tech in Computer Science & Engineering (Expected 2027)</p>
@@ -65,14 +93,15 @@
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up" data-aos-duration="1000">
     <h2>Skills</h2>
     <div class="grid">
       <div class="card">
         <h3>Technical</h3>
         <ul>
-          <li>HTML, CSS, JS</li>
-          <li>Tailwind, React.js, Typescript</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Tailwind CSS, Typescript</li>
+          <li>React.js, Vue.js, Next.js</li>
           <li>MySQL</li>
           <li>Git & GitHub</li>
           <li>Vercel</li>
@@ -91,22 +120,31 @@
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up" data-aos-duration="1000">
     <h2>Projects</h2>
     <div class="grid">
       <div class="card">
         <h3>Personal Portfolio</h3>
-        <p>A responsive website built using HTML and CSS to showcase my skills, interests, and journey.</p>
+        <ul>
+          <li>A responsive personal website designed to showcase projects, and achievements, offering a clean and user-friendly experience across devices.</li>
+          <li>Interactive project showcase, downloadable resume, contact form for inquiries, and seamless navigation.</li>
+        </ul>
       </div>
+      <a href="https://lotsmediaco.vercel.app">
       <div class="card">
-        <h3><a href="https://lotsmediaco.vercel.app">LOTS Media</a></h3>
-        <p>A creative agency website built to showcase graphic design services, portfolio, and client engagement tools with a sleek, modern UI. </p>
+        <h3>LOTS Media</h3>
+        <ul>
+          <li>Developed a responsive, visually appealing website for a creative agency using <em>React.js</em> and <em>Tailwind CSS.</em></li>
+          <li>Implemented a <em>dynamic portfolio gallery</em>, categorized services with <em>custom pricing</em>, and an <em>interactive contact form.</em></li>
+          <li>Integrated <em>auto-scrolling testimonials</em>, a <em>feedback section</em>, and a <em>newsletter subscription system</em> to improve client engagement.</li>
+        </ul>
       </div>
+      </a>
     </div>
   </section>
 
-  <section>
-    <h2>Work Experience</h2>
+  <section data-aos="fade-up" data-aos-duration="1000">
+    <h2>Position of Responsibility</h2>
     <div class="card">
       <h3>Core Team Member (2023–2024)</h3>
       <p>Aptitude Club, Training & Placement Cell, GJUST</p>
@@ -118,7 +156,7 @@
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up" data-aos-duration="1000">
     <h2>Additional Info</h2>
     <div class="card">
     <ul>
