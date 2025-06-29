@@ -1,4 +1,4 @@
-// Apply saved theme on loadMore actions
+// Apply saved theme on load
 document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme');
     const body = document.body;
@@ -72,32 +72,4 @@ fetch('https://your-backend.onrender.com/send', {
 })
 .catch(error => {
   alert('Error sending message.');
-});
-
-const form = document.querySelector('form');
-
-form.addEventListener('submit', async (e) => {
-e.preventDefault();
-
-const formData = new FormData(form);
-const data = Object.fromEntries(formData);
-
-try {
-  const response = await fetch('https://portfolio-backend-6lrf.onrender.com/send', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data),
-      const result = await response.json();Add commentMore actions
-
-  if (result.status === 'success') {
-    alert('✅ Message sent successfully!');
-    form.reset();
-  } else {
-    alert('❌ Something went wrong. Please try again.');
-} catch (error) {
-  alert('❌ Server Error. Please try again later.');
-  console.error(error);
-}
 });
