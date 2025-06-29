@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="stylesheets/contactstyle.css">
   <link rel="stylesheet" href="stylesheets/darkmode.css">
   <script src="scripts/script.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
 
@@ -18,29 +20,49 @@
 </button>
 
 <header>
-  <h1>Pushpender Rao</h1>
-  <p>“Aspiring Software Engineer | Tech Enthusiast | Creative Designer”</p>
+  <div id="preloader">
+    <div class="text-loader">
+      <span class="letter">C</span>
+      <span class="letter">O</span>
+      <span class="letter">N</span>
+      <span class="letter">T</span>
+      <span class="letter">A</span>
+      <span class="letter">C</span>
+      <span class="letter">T</span>
+    </div>
+  </div>
+  <div class="header-left">
+    <a href="index.html">
+      <img src="assets/images/PushpenderRao.jpg" alt="Pushpender Rao">
+    </a>
+    <div class="title-text">
+      <h1>Pushpender Rao</h1>
+      <p>“Aspiring Software Engineer”</p>
+    </div>
+  </div>
   <div class="header-content">
     <a href="index.html">Home</a>
     <a href="contact.html">Contact</a>
-    </div>
+  </div>
 </header>
 
-<section>
+<section data-aos="fade-up" data-aos-duration="1000">
   <h2>Contact Me</h2>
   <div class="card">
     <p>If you'd like to collaborate, chat about tech, or just say hello — feel free to reach out using the form below or connect with me directly through email or social media.</p>
-    <form action="https://formsubmit.co/pushpenderrao31@gmail.com" method="POST"  data-redirect="https://pushpenderrao84.github.io/Portfolio/index.html">
-            <!-- Visible Input Fields -->
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
+    <form action="https://portfolio-backend-6lrf.onrender.com/send" method="POST">
+      <!-- Visible Input Fields -->
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
 
-            <!-- Hidden Fields -->
-            <input type="hidden" name="_captcha" value="true">   <!-- Disable captcha -->
-          
-            <!-- Submit Button -->
-            <button type="submit">Send</button>
+      <!-- Hidden Fields -->
+      <input type="hidden" name="_next" value="https://pushpenderrao84.github.io/Portfolio/index.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Submit Button -->
+      <button type="submit">Send</button>
     </form>
   </div>
 </section>
