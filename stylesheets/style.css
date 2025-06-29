@@ -14,6 +14,50 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--navy);
+  color: var(--accent-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.text-loader {
+  display: flex;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-loader .letter {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.text-loader .letter {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
 body {
     padding-top: 8rem;
     background-color: var(--light-gray);
@@ -22,49 +66,104 @@ body {
 }
 
 header {
-    padding: 1rem;
-    text-align: center;
-    background: #0006108a;
-    color: white;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(10px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    flex-direction: column;
-    border-bottom: 2px solid #0b00001a;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.852);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem; /* More padding for spacing */
+  background: #0006108a;
+  color: white;
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 2px solid #0b00001a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.852);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-left img {
+  height: 4rem;
+  border: solid 0.05rem #000000;
+  border-radius: 15%;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left-align the text block */
+}
+
+.title-text h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.title-text p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .header-content {
-    margin-top: 0.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 3rem; /* Increased spacing between sections */
-    flex-wrap: wrap;
-    margin-bottom: 0.5rem;
-    color: #e0e0e0;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-size: 0.95rem;
-    min-width: 100px; /* Ensures even narrow sections stay clean */
+  margin-right: 4rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .header-content a {
-    text-decoration: none;
-    color: #e0e0e0;
-    font-weight: 500;
-    transition: color 0.3s, transform 0.3s;
-    padding: 0.25rem 0.5rem;
-    border-radius: 5px;
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
 }
 
 .header-content a:hover {
-    color: var(--accent-blue);
-    background-color: rgba(255, 255, 255, 0.05);
-    transform: translateY(-2px);
+  color: var(--accent-blue);
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ========== Responsive Header ========== */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-left {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .title-text {
+    align-items: flex-start;
+  }
+
+  .header-content {
+    margin-top: 0.5rem;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .header-content a {
+    margin-right: 1rem;
+  }
+
+  .toggle-mode {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
 }
 
 .toggle-mode {
@@ -110,9 +209,14 @@ h2 {
     transition: var(--transition);
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
 .hero {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 0.5rem 2rem;
 }
 
 .hero h1 {
@@ -145,7 +249,7 @@ h2 {
     }
 }
 
-.card h3 a {
+.grid a {
     color: inherit;
     text-decoration: none;
     font-weight: inherit;
@@ -210,4 +314,17 @@ footer {
 .footer-note {
     font-size: 0.85rem;
     color: #c0c0c0;
+}
+
+/* ========== Responsive Footer ========== */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* reduce gap for mobile */
+  }
+
+  .footer-section {
+    text-align: center;
+  }
 }
