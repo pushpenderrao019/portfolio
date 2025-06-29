@@ -55,7 +55,7 @@ window.addEventListener("load", () => {
   }, 2500); // Preloader visible for at least 2.5 seconds
 });
 
-// Contact form submission (Prevent redirect)
+  // Contact form submission (Prevent redirect)
   const form = document.querySelector('form');
   if (form) {
     form.addEventListener('submit', async (e) => {
