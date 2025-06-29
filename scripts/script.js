@@ -73,3 +73,35 @@ fetch('https://your-backend.onrender.com/send', {
 .catch(error => {
   alert('Error sending message.');
 });
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', async (e) => {
+e.preventDefault();
+
+const formData = new FormData(form);
+const data = Object.fromEntries(formData);
+
+try {
+  const response = await fetch('https://your-backend-url.onrender.com/send', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data),
+  });
+
+  const result = await response.json();
+
+  if (result.status === 'success') {
+    alert('✅ Message sent successfully!');
+    form.reset();
+  } else {
+    alert('❌ Something went wrong. Please try again.');
+  }
+
+} catch (error) {
+  alert('❌ Server Error. Please try again later.');
+  console.error(error);
+}
+});
