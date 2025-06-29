@@ -83,7 +83,7 @@ const formData = new FormData(form);
 const data = Object.fromEntries(formData);
 
 try {
-  const response = await fetch('https://your-backend-url.onrender.com/send', {
+  const response = await fetch('https://portfolio-backend-6lrf.onrender.com/send', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
