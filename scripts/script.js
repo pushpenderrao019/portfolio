@@ -54,51 +54,54 @@ window.addEventListener("load", () => {
   }, 2500); // Preloader visible for at least 2.5 seconds
 });
 
-fetch('https://your-backend.onrender.com/send', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    name: nameValue,
-    email: emailValue,
-    subject: subjectValue,
-    message: messageValue
-  })
-})
-.then(res => res.json())
-.then(data => {
-  alert(data.message);
-})
-.catch(error => {
-  alert('Error sending message.');
-});
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
 
-const form = document.querySelector('form');
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-form.addEventListener('submit', async (e) => {
-e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
-const formData = new FormData(form);
-const data = Object.fromEntries(formData);
+    try {
+      const response = await fetch("https://portfolio-backend-6lrf.onrender.com/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data),
+      });
 
-try {
-  const response = await fetch('https://portfolio-backend-6lrf.onrender.com/send', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data),
+      const result = await response.json();
+
+      if (result.success) {
+        showPopup("✅ Message sent successfully!");
+        form.reset();
+      } else {
+        showPopup("❌ Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      showPopup("❌ Server error. Try again later.");
+    }
   });
 
-  const result = await response.json();
-
-  if (result.status === 'success') {
-    alert('✅ Message sent successfully!');
-    form.reset();
-  } else {
-    alert('❌ Something went wrong. Please try again.');
+  function showPopup(message) {
+    const popup = document.createElement("div");
+    popup.textContent = message;
+    popup.style.position = "fixed";
+    popup.style.bottom = "20px";
+    popup.style.right = "20px";
+    popup.style.backgroundColor = "#222";
+    popup.style.color = "#fff";
+    popup.style.padding = "12px 20px";
+    popup.style.borderRadius = "8px";
+    popup.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+    popup.style.zIndex = "9999";
+    document.body.appendChild(popup);
+    setTimeout(() => popup.remove(), 4000);
   }
+});
 
 } catch (error) {
   alert('❌ Server Error. Please try again later.');
