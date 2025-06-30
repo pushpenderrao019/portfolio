@@ -11,6 +11,12 @@ body.dark-mode header {
     box-shadow: 0 4px 20px #1f2b3a;
 }
 
+body.dark-mode .header-left img {
+  height: 4rem;
+  border: solid 0.05rem #3db9f5;
+  border-radius: 15%;
+}
+
 body.dark-mode .toggle-mode {
     background: var(--accent-blue);
     box-shadow: 0 1px 20px #4d88d5;
