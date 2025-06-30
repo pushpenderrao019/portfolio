@@ -40,9 +40,13 @@ html {
 
 .text-loader {
   display: flex;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
+  flex-wrap: wrap; /* allow wrapping */
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -197,6 +201,10 @@ header {
 .toggle-mode img {
     width: 20px;
     height: 20px;
+}
+
+.text-loader {
+    font-size: 1.5rem;
 }
 
 section {
