@@ -1,20 +1,28 @@
+console.log("Script loaded");
+
 // === DARK MODE ===
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("DOM fully loaded");
+
   const savedTheme = localStorage.getItem('theme');
   const body = document.body;
   const icon = document.getElementById("mode-icon");
 
   if (savedTheme === 'dark') {
     body.classList.add('dark-mode');
-    icon.src = "https://img.icons8.com/ios-glyphs/30/sun--v1.png";
-    icon.alt = "Light Mode";
+    if (icon) {
+      icon.src = "https://img.icons8.com/ios-glyphs/30/sun--v1.png";
+      icon.alt = "Light Mode";
+    }
   } else {
     body.classList.remove('dark-mode');
-    icon.src = "https://img.icons8.com/ios-glyphs/30/moon-symbol.png";
-    icon.alt = "Dark Mode";
+    if (icon) {
+      icon.src = "https://img.icons8.com/ios-glyphs/30/moon-symbol.png";
+      icon.alt = "Dark Mode";
+    }
   }
 
-  // === CONTACT FORM HANDLER ===
+  // === CONTACT FORM ===
   const form = document.getElementById('contact-form');
   const responseDiv = document.getElementById('form-response');
 
@@ -47,14 +55,16 @@ document.addEventListener('DOMContentLoaded', () => {
           responseDiv.innerText = "❌ Failed to send message. Try again.";
         }
       } catch (error) {
-        console.error(error);
+        console.error("Error sending message:", error);
         responseDiv.innerText = "❌ An error occurred. Please try again later.";
       }
     });
+  } else {
+    console.warn("Form or responseDiv not found");
   }
 });
 
-// === DARK MODE TOGGLER ===
+// === DARK MODE TOGGLE ===
 function toggleDarkMode() {
   const body = document.body;
   const icon = document.getElementById("mode-icon");
@@ -72,27 +82,40 @@ function toggleDarkMode() {
   }
 }
 
-// === AOS ===
-AOS.init();
-
 // === PRELOADER ===
 window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  const letters = preloader?.querySelectorAll('.letter');
+  console.log("Window loaded");
 
-  if (letters && letters.length > 0) {
-    letters.forEach((letter, index) => {
-      letter.style.animation = "fade-in 0.5s ease forwards";
-      letter.style.animationDelay = `${index * 0.15}s`;
-    });
+  const preloader = document.getElementById("preloader");
+  const letters = document.querySelectorAll('#preloader .letter');
+
+  if (letters.length === 0) {
+    console.warn("No letters found inside #preloader");
   }
 
-  // Remove after delay
+  letters.forEach((letter, index) => {
+    letter.style.opacity = 0;
+    letter.style.animation = "fade-in 0.5s ease forwards";
+    letter.style.animationDelay = `${index * 0.15}s`;
+  });
+
   setTimeout(() => {
-    preloader.style.opacity = '0';
-    preloader.style.transition = 'opacity 0.5s ease';
-    setTimeout(() => {
-      preloader.style.display = 'none';
-    }, 500);
+    if (preloader) {
+      preloader.style.opacity = '0';
+      preloader.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+        console.log("Preloader removed");
+      }, 500);
+    } else {
+      console.warn("Preloader not found");
+    }
   }, 2500);
 });
+
+// === AOS ===
+try {
+  AOS.init();
+} catch (error) {
+  console.warn("AOS failed to initialize:", error);
+}
