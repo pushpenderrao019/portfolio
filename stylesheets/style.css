@@ -246,6 +246,11 @@ h2 {
     border-radius: 5px;
 }
 
+.hero .contact-btns:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
