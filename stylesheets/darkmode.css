@@ -34,6 +34,10 @@ body.dark-mode .header-content a:hover {
     color: var(--accent-blue);
 }
 
+body.dark-mode .hero .contact-btns a:hover {
+  box-shadow: 0 8px 20px rgba(37, 150, 190,0.7);
+}
+
 body.dark-mode input,
 body.dark-mode textarea {
     background-color: #2b3b4a;
