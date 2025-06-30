@@ -1,6 +1,5 @@
-// Apply saved theme on load
-document.addEventListener('DOMContentLoaded', function () {
-  // Theme preference
+// === DARK MODE ===
+document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   const body = document.body;
   const icon = document.getElementById("mode-icon");
@@ -15,12 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
     icon.alt = "Dark Mode";
   }
 
-  // Contact form handler
+  // === CONTACT FORM HANDLER ===
   const form = document.getElementById('contact-form');
   const responseDiv = document.getElementById('form-response');
 
-  if (form) {
-    form.addEventListener('submit', async function (e) {
+  if (form && responseDiv) {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const formData = new FormData(form);
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// Toggle theme and save preference
+// === DARK MODE TOGGLER ===
 function toggleDarkMode() {
   const body = document.body;
   const icon = document.getElementById("mode-icon");
@@ -73,18 +72,22 @@ function toggleDarkMode() {
   }
 }
 
+// === AOS ===
 AOS.init();
 
+// === PRELOADER ===
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
+  const letters = preloader?.querySelectorAll('.letter');
 
-  // Dynamically set animation delays for each letter
-  const letters = document.querySelectorAll('#preloader .letter');
-  letters.forEach((letter, index) => {
-    letter.style.animationDelay = `${index * 0.15}s`;
-  });
+  if (letters && letters.length > 0) {
+    letters.forEach((letter, index) => {
+      letter.style.animation = "fade-in 0.5s ease forwards";
+      letter.style.animationDelay = `${index * 0.15}s`;
+    });
+  }
 
-  // Delay before removing the preloader
+  // Remove after delay
   setTimeout(() => {
     preloader.style.opacity = '0';
     preloader.style.transition = 'opacity 0.5s ease';
