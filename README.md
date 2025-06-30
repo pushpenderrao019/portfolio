@@ -47,7 +47,7 @@ I'm excited to officially launch my personal portfolio website, a digital space 
 
 ## ❤️ Final Thoughts
 
-This website is a reflection of my growth as a developer, designer, and creator. It's not just a resume — it's a live canvas of my passion for building, exploring, and storytelling. I’ll continue to evolve it as I learn and grow.
+This website is a reflection of my growth as a developer. It's not just a resume — it's a live canvas of my passion for building, exploring, and storytelling. I’ll continue to evolve it as I learn and grow.
 
 Stay tuned for future updates — animations, project case studies, and blog integrations are on the roadmap!
 
