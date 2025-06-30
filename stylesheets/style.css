@@ -40,9 +40,9 @@ html {
 
 .text-loader {
   display: flex;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
   flex-wrap: wrap; /* allow wrapping */
   justify-content: center;
   text-align: center;
@@ -177,6 +177,10 @@ header {
     top: 1rem;
     right: 1rem;
   }
+
+  .text-loader {
+    font-size: 1.5rem;
+  }
 }
 
 .toggle-mode {
@@ -201,10 +205,6 @@ header {
 .toggle-mode img {
     width: 20px;
     height: 20px;
-}
-
-.text-loader {
-    font-size: 1.5rem;
 }
 
 section {
