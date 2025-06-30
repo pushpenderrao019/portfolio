@@ -33,6 +33,11 @@ html {
   overflow: hidden;
 }
 
+.letter {
+  display: inline-block;
+  opacity: 0;
+}
+
 .text-loader {
   display: flex;
   font-size: 3rem;
