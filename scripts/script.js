@@ -54,3 +54,43 @@ window.addEventListener("load", () => {
     }, 500); // Wait for fade-out transition
   }, 2500); // Preloader visible for at least 2.5 seconds
 });
+
+// Contact form handler
+  const form = document.getElementById('contact-form');
+  const responseDiv = document.getElementById('form-response');
+
+  if (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+      };
+
+      try {
+        const res = await fetch('https://portfolio-backend-6lrf.onrender.com/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+        if (result.success) {
+          responseDiv.innerText = "✅ Message sent successfully!";
+          form.reset();
+        } else {
+          responseDiv.innerText = "❌ Failed to send message. Try again.";
+        }
+      } catch (error) {
+        console.error(error);
+        responseDiv.innerText = "❌ An error occurred. Please try again later.";
+      }
+    });
+  }
+});
