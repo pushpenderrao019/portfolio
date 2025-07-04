@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Pushpender Rao</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpg" href="assets/images/PushpenderRao.jpg">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/contactstyle.css">
+  <link rel="stylesheet" href="stylesheets/darkmode.css">
+  <script src="scripts/script.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+<button class="toggle-mode" onclick="toggleDarkMode()">
+  <img id="mode-icon" src="https://img.icons8.com/ios-glyphs/30/moon-symbol.png" alt="Toggle Mode">
+</button>
+
+<header>
+  <div id="preloader">
+    <div class="text-loader">
+      <span class="letter">C</span>
+      <span class="letter">O</span>
+      <span class="letter">N</span>
+      <span class="letter">T</span>
+      <span class="letter">A</span>
+      <span class="letter">C</span>
+      <span class="letter">T</span>
+    </div>
+  </div>
+  <div class="header-left">
+    <a href="index.html">
+      <img src="assets/images/PushpenderRao.jpg" alt="Pushpender Rao">
+    </a>
+    <div class="title-text">
+      <h1>Pushpender Rao</h1>
+      <p>“Aspiring Software Engineer”</p>
+    </div>
+  </div>
+  <div class="header-content">
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<section>
+  <h2>Contact Me</h2>
+  <div class="card">
+    <p>If you'd like to collaborate, chat about tech, or just say hello — feel free to reach out using the form below or connect with me directly through email or social media.</p>
+    <form id="contact-form">
+      <!-- Visible Input Fields -->
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <!-- Hidden Fields -->
+      <input type="hidden" name="_next" value="https://pushpenderrao84.github.io/Portfolio/index.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Submit Button -->
+      <button type="submit">Send</button>
+    </form>
+    <div id="form-response" style="margin-top: 1rem;"></div>
+  </div>
+</section>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Main</h3>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Social</h3>
+        <a href="mailto:pushpenderrao019@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/pushpender-rao" target="_blank">LinkedIn</a>
+        <a href="https://github.com/pushpenderrao019" target="_blank">GitHub</a>
+        <a href="https://x.com/pushpender019/" target="_blank">Twitter (X)</a>
+      </div>
+    </div>
+    <p class="footer-note">Made with ❤️ by Pushpender Rao</p>
+  </footer>  
+</body>
+</html>
